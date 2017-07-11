@@ -14,7 +14,12 @@ class CreateItemInput extends React.Component {
   }
 
   handleClick() {
-    this.props.onCreateClick(this.state.itemName);
+    if(this.state.itemName) {
+      this.props.onCreateClick(this.state.itemName);
+      this.setState({
+          itemName: '',
+      });
+    }
   }
 
   handleChange(e) {
@@ -26,8 +31,12 @@ class CreateItemInput extends React.Component {
   render() {
     return (
         <div>
-          <button onClick={this.handleClick}>+</button>
-          <input type="text" value={this.state.itemName} onChange={this.handleChange} />
+          <button className="createButton" onClick={this.handleClick}>+</button>
+          <input className="inputField"
+                 type="text"
+                 value={this.state.itemName}
+                 placeholder="Enter task name..."
+                 onChange={this.handleChange} />
         </div>
     );
   }
@@ -77,7 +86,7 @@ class App extends React.Component {
   render() {
     const items = this.state.items;
     return (
-        <div>
+        <div className="app">
           <CreateItemInput onCreateClick={this.handleCreateClick} />
           <ItemList items={items} />
           <ProgressBar />

@@ -1,0 +1,39 @@
+.app {
+  width: 400px;
+  margin: 30px auto;
+}
+
+.createButton {
+  border: 2px solid #4dd6f7;
+  border-radius: 100%;
+  background-color: #ffffff;
+  width: 40px;
+  height: 40px;
+  outline: none;
+}
+
+.createButton:hover {
+  background-color: #fafafa;
+}
+
+.createButton:active {
+  background-color: #f6f6f6;
+}
+
+.inputField {
+  margin: 0 20px;
+  padding: 5px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid #aaaaaa;
+  border-radius: 2px;
+  width: 300px;
+  height: 25px;
+  font-size: 18px;
+}
+
+.inputField:focus {
+  outline: none;
+  border-bottom: 2px solid #4dd6f7;
+}
