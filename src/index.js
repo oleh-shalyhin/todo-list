@@ -45,11 +45,11 @@ class CreateItemInput extends React.Component {
 class ItemList extends React.Component {
   render() {
     const items = this.props.items.map((item, index) => (
-        <li key={index}>{item}</li>
+        <li className="todoListItem" key={index}>{item}</li>
     ));
     return (
         <div>
-          <ul>
+          <ul className="todoList">
             {items}
           </ul>
         </div>

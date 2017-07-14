@@ -10,14 +10,15 @@
   width: 40px;
   height: 40px;
   outline: none;
+  font-size: 20px;
 }
 
 .createButton:hover {
-  background-color: #fafafa;
+  background-color: #eefffa;
 }
 
 .createButton:active {
-  background-color: #f6f6f6;
+  background-color: #dcfcff;
 }
 
 .inputField {
@@ -28,12 +29,26 @@
   border-right: 0;
   border-bottom: 2px solid #aaaaaa;
   border-radius: 2px;
-  width: 300px;
+  width: 310px;
   height: 25px;
   font-size: 18px;
+  font-family: "Century Gothic", Arial;
 }
 
 .inputField:focus {
   outline: none;
   border-bottom: 2px solid #4dd6f7;
+}
+
+.todoList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.todoListItem {
+  border-bottom: 1px solid #aaaaaa;
+  padding: 20px 5px 5px;
+  font-size: 20px;
+  font-family: "Century Gothic", Arial;
 }
