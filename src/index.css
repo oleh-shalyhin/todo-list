@@ -63,6 +63,7 @@ button {
 
 .itemControls {
   float: right;
+  padding-top: 2px;
 }
 
 .removeBtn {
@@ -91,6 +92,7 @@ button {
 .editField {
   float: left;
   height: 18px;
+  width: 600px;
   margin-right: 2px;
   font-size: 20px;
   font-family: "Century Gothic", Arial;
