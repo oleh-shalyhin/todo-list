@@ -15,11 +15,9 @@ export default class ItemsList extends React.Component {
   }
 
   onRemoveClick(itemIndex) {
-    if(itemIndex === this.state.editingIndex) {
-      this.setState({
-        editingIndex: null,
-      });
-    }
+    this.setState({
+      editingIndex: null,
+    });
     this.props.onRemoveClick(itemIndex);
   }
 
