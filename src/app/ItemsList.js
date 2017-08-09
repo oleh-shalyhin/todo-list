@@ -83,7 +83,11 @@ class ItemContent extends React.Component {
   }
 
   onAcceptEditClick() {
-    this.props.onAcceptEditClick(this.state.content, this.props.itemIndex);
+    if(this.state.content === "") {
+      this.onRejectEditClick();
+    } else {
+      this.props.onAcceptEditClick(this.state.content, this.props.itemIndex);
+    }
   }
 
   onRejectEditClick() {
