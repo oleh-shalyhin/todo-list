@@ -1,3 +1,7 @@
+button {
+  outline: none;
+}
+
 .app {
   width: 400px;
   margin: 30px auto;
@@ -9,7 +13,6 @@
   background-color: #ffffff;
   width: 40px;
   height: 40px;
-  outline: none;
   font-size: 20px;
 }
 
@@ -47,10 +50,15 @@
 }
 
 .todoListItem {
+  height: 32px;
   border-bottom: 1px solid #aaaaaa;
-  padding: 20px 5px 5px;
+  padding: 20px 5px 5px 5px;
   font-size: 20px;
   font-family: "Century Gothic", Arial;
+}
+
+.itemContent {
+  float: left;
 }
 
 .itemControls {
@@ -58,12 +66,57 @@
 }
 
 .removeBtn {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background-color: #ff0000;
   color: #ffffff;
   border: 2px solid #e20000;
   border-radius: 5px;
   text-align: center;
   padding: 0;
+  margin-left: 5px;
+  float: right;
+}
+
+.editBtn {
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
+  background-image: url("./assets/img/edit_button.png");
+  border: 0;
+  padding: 0;
+  float: left;
+}
+
+.editField {
+  float: left;
+  height: 18px;
+  margin-right: 2px;
+  font-size: 20px;
+  font-family: "Century Gothic", Arial;
+  border: 2px solid #4dd6f7;
+  padding: 3px;
+}
+
+.rejectEditBtn {
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
+  background-image: url("./assets/img/reject_button.png");
+  border: 0;
+  padding: 0;
+  float: left;
+  margin-top: 2px;
+}
+
+.acceptEditBtn {
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
+  background-image: url("./assets/img/accept_button.png");
+  border: 0;
+  padding: 0;
+  float: left;
+  margin-right: 2px;
+  margin-top: 2px;
 }

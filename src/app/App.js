@@ -12,12 +12,23 @@ export default class App extends React.Component {
     };
 
     this.handleCreateClick = this.handleCreateClick.bind(this);
+    this.handleAcceptEditClick = this.handleAcceptEditClick.bind(this);
     this.handleRemoveItem = this.handleRemoveItem.bind(this);
   }
 
   handleCreateClick(itemName) {
     const items = this.state.items.slice();
-    items.push(itemName);
+    items.push({
+      name: itemName,
+    });
+    this.setState({
+      items: items
+    });
+  }
+
+  handleAcceptEditClick(itemName, index) {
+    const items = this.state.items.slice();
+    items[index].name = itemName;
     this.setState({
       items: items
     });
@@ -36,7 +47,7 @@ export default class App extends React.Component {
     return (
         <div className="app">
           <CreateItemPanel onCreateClick={this.handleCreateClick} />
-          <ItemsList items={items} onRemoveClick={this.handleRemoveItem} />
+          <ItemsList items={items} onRemoveClick={this.handleRemoveItem} onAcceptEditClick={this.handleAcceptEditClick} />
           <ProgressPanel />
         </div>
     );
