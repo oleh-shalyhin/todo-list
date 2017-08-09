@@ -3,7 +3,7 @@ button {
 }
 
 .app {
-  width: 400px;
+  width: 800px;
   margin: 30px auto;
 }
 
@@ -32,7 +32,7 @@ button {
   border-right: 0;
   border-bottom: 2px solid #aaaaaa;
   border-radius: 2px;
-  width: 310px;
+  width: 710px;
   height: 25px;
   font-size: 18px;
   font-family: "Century Gothic", Arial;
