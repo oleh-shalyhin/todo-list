@@ -41,13 +41,13 @@ export default class ItemsList extends React.Component {
   }
 
   render() {
-    const props = this.props;
+    const items = this.props.items;
     const editingIndex = this.state.editingIndex;
 
-    const items = props.items.map((item, index) => {
+    const listElements = items.map((item, index) => {
       const editing = editingIndex === index;
       return (
-        <li className="todoListItem" key={index}>
+        <li className="todoListItem" key={item.id}>
           <ItemContent item={item} itemIndex={index} editing={editing} onAcceptEditClick={this.onAcceptEditClick} onRejectEditClick={this.handleRejectEditClick} />
           <ItemControls itemIndex={index} onRemoveClick={this.onRemoveClick} onEditClick={this.handleEditClick} />
         </li>
@@ -57,7 +57,7 @@ export default class ItemsList extends React.Component {
     return (
         <div>
           <ul className="todoList">
-            {items}
+            {listElements}
           </ul>
         </div>
     );
@@ -83,10 +83,12 @@ class ItemContent extends React.Component {
   }
 
   onAcceptEditClick() {
-    if(this.state.content === "") {
-      this.onRejectEditClick();
+    const content = this.state.content;
+
+    if(content) {
+      this.props.onAcceptEditClick(content, this.props.itemIndex);
     } else {
-      this.props.onAcceptEditClick(this.state.content, this.props.itemIndex);
+      this.onRejectEditClick();
     }
   }
 
@@ -98,15 +100,15 @@ class ItemContent extends React.Component {
   }
 
   render() {
-    const props = this.props;
+    const {item, editing} = this.props;
     const text = this.state.content;
-    let content = props.editing
+    let content = editing
         ? <div>
             <input className="editField" type="text" value={text} onChange={this.handleEditFieldChange} />
             <button className="acceptEditBtn" onClick={this.onAcceptEditClick}></button>
             <button className="rejectEditBtn" onClick={this.onRejectEditClick}></button>
           </div>
-        : <div>{props.item.name}</div>;
+        : <div>{item.name}</div>;
 
     return (
         <div className="itemContent">

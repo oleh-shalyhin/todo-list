@@ -13,8 +13,10 @@ export default class CreateItemPanel extends React.Component {
   }
 
   handleClick() {
-    if(this.state.itemName) {
-      this.props.onCreateClick(this.state.itemName);
+    const itemName = this.state.itemName;
+
+    if(itemName) {
+      this.props.onCreateClick(itemName);
       this.setState({
         itemName: '',
       });
@@ -28,12 +30,14 @@ export default class CreateItemPanel extends React.Component {
   }
 
   render() {
+    const itemName = this.state.itemName;
+
     return (
         <div>
           <button className="createButton" onClick={this.handleClick}>+</button>
           <input className="inputField"
                  type="text"
-                 value={this.state.itemName}
+                 value={itemName}
                  placeholder="Enter task name..."
                  onChange={this.handleChange} />
         </div>

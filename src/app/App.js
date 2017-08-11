@@ -4,6 +4,12 @@ import CreateItemPanel from './CreateItemPanel';
 import ItemsList from './ItemsList';
 import ProgressPanel from './ProgressPanel';
 
+let uniqueID = 0;
+
+function getUniqueID() {
+  return uniqueID++;
+}
+
 export default class App extends React.Component {
   constructor() {
     super();
@@ -19,6 +25,7 @@ export default class App extends React.Component {
   handleCreateClick(itemName) {
     const items = this.state.items.slice();
     items.push({
+      id: getUniqueID(),
       name: itemName,
     });
     this.setState({
@@ -34,9 +41,9 @@ export default class App extends React.Component {
     });
   }
 
-  handleRemoveItem(itemId) {
+  handleRemoveItem(index) {
     const items = this.state.items.slice();
-    items.splice(itemId, 1);
+    items.splice(index, 1);
     this.setState({
       items: items
     });
